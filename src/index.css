@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  background-color: black;
+}
+
+.container {
+  max-width: 1304px;
+  padding: 0 2rem;
+}
+
+.varela {
+  font-family: "Varela", sans-serif;
+}
+
+.poppins {
+  font-family: "Poppins", sans-serif;
+}

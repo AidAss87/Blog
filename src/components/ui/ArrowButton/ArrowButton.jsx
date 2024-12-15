@@ -13,7 +13,7 @@ export const ArrowButton = ({ left, disable, onClick, ...props }) => {
     >
       <svg
         className={left ? "rotate-180" : ""}
-        width="11"
+        width="15"
         height="15"
         viewBox="0 0 11 15"
         fill="none"

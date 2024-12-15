@@ -1,12 +1,13 @@
+import { Outlet } from "react-router-dom";
+import Header from "./components/Header";
 
-import { ShortReads } from "./components/ShortReads/ShortReads";
-
-function App() {
+function App({ isActive }) {
   return (
-    <div className="varela">
-      
-     <ShortReads/>
-
+    <div>
+      <Header  isActive={isActive}  />
+      <div>
+        <Outlet />
+      </div>
     </div>
   );
 }

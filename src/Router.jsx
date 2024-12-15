@@ -10,11 +10,11 @@ import Post from "./pages/Post";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "",
     element: <App />,
     children: [
       {
-        path: "/connect",
+        path: "/",
         element: <Home />,
         errorElement: <ErrorPage />,
       },

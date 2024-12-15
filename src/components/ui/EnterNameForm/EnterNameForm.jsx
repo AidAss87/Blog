@@ -5,15 +5,13 @@ export const EnterNameForm = ({
   id,
   placeholder,
   register,
-  errors,
   name,
   children,
 }) => {
   const [isSearch, setIsSearch] = useState(false);
 
   return (
-    <form>
-      {" "}
+    <div>
       <div
         className={
           "flex w-[406px] h-12 py-2.5 px-2 bg-[#fafafacf] gap-2 rounded-sm"
@@ -42,18 +40,15 @@ export const EnterNameForm = ({
               onBlur={() => setIsSearch(false)}
               type="text"
               name=""
-              {...register(name, { required: true })}
+              {...(register && { ...register(name, { required: true }) })}
               id={id}
               placeholder={placeholder}
               className={`border-0 outline-none bg-transparent text-sm`}
             />
             {children}
           </div>
-          {errors[name] && (
-            <span className="text-red-500 text-sm">This field is required</span>
-          )}
         </div>
       </div>
-    </form>
+    </div>
   );
 };

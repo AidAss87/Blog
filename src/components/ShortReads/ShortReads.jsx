@@ -1,6 +1,7 @@
 import ArrowButton from "../ui/ArrowButton/ArrowButton";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 // Функция для получения постов с возможностью сортировки и фильтрации
 const fetchPosts = async (sortBy, tag) => {
   const params = {};
@@ -49,27 +50,29 @@ export const ShortReads = () => {
         {/* Используем gap для отступов между элементами */}
         {posts.length > 0 ? (
           posts.slice(0, 3).map((post) => (
-            <div key={post.id} className="post-item w-[340px] h-[100px] flex">
-              {" "}
-              {/* Устанавливаем фиксированные размеры для постов и используем flex для внутреннего выравнивания */}
-              {post.imageUrl && (
-                <img
-                  src={post.imageUrl}
-                  alt={post.title}
-                  className="w-[144px] h-[100px] mr-2" // Устанавливаем фиксированные размеры для изображения и отступ справа
-                />
-              )}
-              <div className="flex flex-col justify-center">
+            <Link key={post.id} to={"/post/" + post.id}>
+              <div className="post-item w-[340px] h-[100px] flex">
                 {" "}
-                {/* Используем flex для вертикального выравнивания текста */}
-                <h2 className="font-semibold font-poppins text-[17px]">
-                  {post.title}
-                </h2>
-                <p className="font-poppins line-clamp-3 text-[12px] text-[#020202]">
-                  {post.content}
-                </p>
+                {/* Устанавливаем фиксированные размеры для постов и используем flex для внутреннего выравнивания */}
+                {post.imageUrl && (
+                  <img
+                    src={post.imageUrl}
+                    alt={post.title}
+                    className="w-[144px] h-[100px] mr-2" // Устанавливаем фиксированные размеры для изображения и отступ справа
+                  />
+                )}
+                <div className="flex flex-col justify-center">
+                  {" "}
+                  {/* Используем flex для вертикального выравнивания текста */}
+                  <h2 className="font-semibold font-poppins text-[17px]">
+                    {post.title}
+                  </h2>
+                  <p className="font-poppins line-clamp-3 text-[12px] text-[#020202]">
+                    {post.content}
+                  </p>
+                </div>
               </div>
-            </div>
+            </Link>
           ))
         ) : (
           <p>Загрузка постов...</p>

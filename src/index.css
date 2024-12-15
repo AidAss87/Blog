@@ -7,12 +7,12 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-  background-color: black;
 }
 
 .container {
   max-width: 1304px;
   padding: 0 2rem;
+  margin: 0 auto;
 }
 
 .varela {

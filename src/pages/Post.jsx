@@ -1,8 +1,13 @@
+import { useParams } from "react-router-dom";
 
 const Post = () => {
-  return (
-    <div>Post</div>
-  )
-}
+  const { id } = useParams();
 
-export default Post
+  return (
+    <div>
+      <h1>Post ID: {id}</h1>
+    </div>
+  );
+};
+
+export default Post;

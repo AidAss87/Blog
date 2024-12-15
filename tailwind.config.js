@@ -9,6 +9,9 @@ export default {
         gray_custom_1: "#636363",
         gray_custom_2: "#8B8B8B",
       },
+      backgroundImage: {
+        "custom-image": "url('/images/hero/background.png')",
+      },
     },
   },
   plugins: [],

@@ -1,13 +1,41 @@
-import { useParams } from "react-router-dom";
+import { useEffect } from "react";
+import { useState } from "react";
+import { getPost } from "../services/api";
+import ArrowButton from "../components/ui/ArrowButton/ArrowButton";
 
-const Post = () => {
-  const { id } = useParams();
+
+export const Post = () => {
+  const [postData, setPostData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const id = 2;
+
+  useEffect(() => {
+    const fetchPost = async () => {
+      try {
+        const data = await getPost(id);
+        setPostData(data);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchPost();
+  }, []);
+
+  if (loading) {
+    return <div>Загрузка...</div>;
+  }
+
+  if (error) {
+    return <div>Ошибка: {error}</div>;
+  }
 
   return (
-    <div>
-      <h1>Post ID: {id}</h1>
-    </div>
-  );
-};
+    <div>Post</div>
+  )
+}
 
-export default Post;
+export default Post

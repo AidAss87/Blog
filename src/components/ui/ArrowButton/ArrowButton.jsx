@@ -5,7 +5,7 @@ export const ArrowButton = ({ left, disable, onClick, ...props }) => {
       onClick={onClick}
       disabled={disable}
       className={
-        "h-8 w-8 border-[3px] border-solid  rounded-full flex justify-center items-center  " +
+        "h-8 w-8 border-[3px] border-solid  rounded-full flex justify-center items-center mr-[15px]  " +
         (disable
           ? "border-[#2828284a]"
           : "border-[#282828] transition-all duration-200 hover:scale-110")

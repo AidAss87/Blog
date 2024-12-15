@@ -2,13 +2,13 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { getPost } from "../services/api";
 import ArrowButton from "../components/ui/ArrowButton/ArrowButton";
-import { ActionButton } from "../components/ui/ActionButton";
+
 
 export const Post = () => {
   const [postData, setPostData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const id = 1;
+  const id = 2;
 
   useEffect(() => {
     const fetchPost = async () => {
@@ -63,7 +63,7 @@ export const Post = () => {
         {postData.content}
       </p>
       <div className="flex items-center gap-8 justify-end mt-[42px]">
-        <ArrowButton/>
+        <ArrowButton />
         <h2 className="text-black varela text-[35px] tracking-[8px]">
           CHAPTER {postData.id}
         </h2>

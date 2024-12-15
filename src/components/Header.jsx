@@ -4,9 +4,9 @@ import SignUpButton from "./ui/SignUpButton/SignUpButton";
 
 export const Header = () => {
   return (
-    <div className=" flex items-center h-16 bg-white px-20 justify-between fixed w-full">
+    <div className="top-0 flex items-center h-16 bg-white px-20 justify-between fixed w-full">
       <div>
-        <img src="header-logo.svg" alt="" />
+        <img src="/header-logo.svg" alt="" />
       </div>
       <div>
         <nav>
